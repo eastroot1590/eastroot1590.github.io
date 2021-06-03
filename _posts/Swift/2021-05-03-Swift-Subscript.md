@@ -7,8 +7,6 @@ cateogries: Swift
 
 인터넷에서 이런 저런 코드를 보다가 `self[someIndex]`라는 이상한 코드를 발견했다. `self`는 클래스 인스턴스를 말하는데 거기에 배열처럼 접근할 수 있나? 구글링을 해보니까 Swift의 `subscript`라는 문법이라고 한다. 그래서 [Swift 5.4 Document Subscript](https://docs.swift.org/swift-book/LanguageGuide/Subscripts.html) 문서를 번역하면서 공부해보기로 했다.
 
-<br/>
-
 `class`, `struct`, `enum`등 사용자 정의 타입은 맴버에 빠르게 접근할 수 있는 **subscript**라는 키워드를 제공한다. subscript를 사용하면 `Array` 인스턴스의 각 값을 `someArray[index]`로 접근하고 `Dictionary` 인스턴스의 각 value를 `someDictionary[key]`로 얻어오는 것처럼 따로 함수를 만들지 않고도 인덱스 값을 통해 특정 맴버로 접근해서 값을 얻어오거나 수정할 수 있다. 
 
 > 이미 배열과 딕셔너리를 사용하면서 subscript를 알게모르게 쓰고있었다.

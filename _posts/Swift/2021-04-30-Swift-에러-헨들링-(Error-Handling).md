@@ -7,8 +7,6 @@ categories: Swift
 
 이 글은 [Swift 5.4 Document Error Handling](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html){:target="_blank"} 문서를 번역한 글이며, Swift에서 어떻게 에러를 헨들링하는지 설명한다.
 
-<br/>
-
 **에러 헨들링(Error Handling)**은 프로그램의 에러 상황에 대응하고 복구하는 작업을 말한다. Swift는 런타임에 에러를 throw-catch 하거나, 전파, 조작, 복구할 수 있는 문법을 제공한다.
 
 이 문법들이 항상 모든 에러에 대한 완벽한 헨들링를 보장하는 것은 아니다. 옵셔널은 값이 없다는 것을 표현하기 위해 만들어졌지만, 에러 헨들링에서 실패했을 때 어떤 원인에 의해 실패했는지 코드에서 알아내고 그에 따라 반응하도록 할 때 유용하게 사용할 수 있다.
@@ -36,8 +34,6 @@ enum VendingMachineError: Error {
 ```swift
 throw VendingMachineError.insufficientFunds(coinsNeeded: 5)
 ```
-
-<br/>
 
 ## 에러 헨들링 (Handling Errors)
 
@@ -253,7 +249,7 @@ func fetchData() -> Data? {
 }
 ```
 
-### 에러 전파 중지 (**Disabling Error Propagation)**
+### 에러 전파 중지 (Disabling Error Propagation)
 
 종종 throwing function이 에러를 던지지 않는다고 확신할 수 있을 때가 있다. 이런 경우에 `try!`를 써서 에러 전파를 막을 수 있다. 하지만 실제로 에러가 던져진다면 런타임 에러가 발생할 것이다.
 
@@ -263,9 +259,7 @@ func fetchData() -> Data? {
 let photo = try! loadImage(atPath: "./Resources/John Appleseed.jpg")
 ```
 
-<br/>
-
-## 뒷정리 (**Specifying Cleanup Actions)**
+## 뒷정리 (Specifying Cleanup Actions)
 
 Swift는 현재 코드 블록을 벗어나기 직전에 마무리 작업을 수행하도록 하기 위해 `defer` 키워드를 제공한다. `defer` 블록은 에러를 던져서 빠져나갔는지, `return`이나 `break`로 빠져나갔는지를 따지지 않고 블록을 벗어날 때 무조건 실행되기 때문에 필요한 뒷정리 작업을 할 수 있다. 예를 들어, `defer` 블록에 열었던 파일을 닫는 코드를 추가하면 파일이 열린 채로 남아있는 것을 방지할 수 있다.
 
