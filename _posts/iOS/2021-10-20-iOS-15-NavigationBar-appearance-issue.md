@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "iOS 15 UINavigationBar appearance issue (진행중)"
+title: "iOS 15 UINavigationBar appearance issue"
 data: 2021-10-20 21:03:00 +0900
 categories: iOS
 ---
@@ -87,21 +87,21 @@ class ViewController: UINavigationController {
 
 명시적으로 이 옵션을 주고 다시 실행해보니 잘 된다. 위 코드를 기반으로 문제를 추측해보자면 기존에는 `scrollEdgeAppearance`랑 `standardAppearance`가 독립적으로 작동했다가 iOS 15부터는 `scrollEdgeAppearance`의 설정이 `standardAppearance`를 덮어쓰기 때문인 것 같다. 예를 들어 `scrollEdgeAppearance`에만 `shadowImage`를 추가해도 `standardAppearance`에 그림자가 보인다.
 
-![standard_nil_scoll_template.png](/asset/iOS/standard_nil_scoll_template.png)
+![standard_nil_scoll_template.png](/assets/iOS/standard_nil_scoll_template.png)
 
 - scrollEdgeAppearance.shadowImage = template 이미지
 - standardAppearance.shadowImage = nil
 
 `shadowImage`가 두 appearance 모두 `nil`일 경우 그림자를 그리지 않지만 iOS 15의 경우 어느 것 하나라도 `template`이 아닐 때 그 이미지를 가지고 두 appearance에 모두 그림자를 그린다. 
 
-![standard_nil_scroll_origin.png](/asset/iOS/standard_nil_scroll_origin.png)
+![standard_nil_scroll_origin.png](/assets/iOS/standard_nil_scroll_origin.png)
 
 - scrollEdgeAppearance.shadowImage = 이미지
 - standardAppearance.shadowImage = nil
 
 그래서 현재로서는 `scrollEdgeAppearance`에는 그림자가 있고, `standardAppearance`는 그림자가 없는 형태로 만들 수가 없을 것으로 보인다.
 
-![standard_clear_scroll_template.png](/asset/iOS/standard_clear_scroll_template.png)
+![standard_clear_scroll_template.png](/assets/iOS/standard_clear_scroll_template.png)
 
 iOS 14의 경우 각 appearance가 자신의 `shadowImage`, `shadowColor`에만 영향을 받기 때문에 위처럼 만들 수도 있지만 iOS 15의 경우 이번에 업데이트된 내용 때문에 이렇게 만들 수는 없게된 것 같다.
 
@@ -120,9 +120,9 @@ iOS 15의 `standardAppearance`
 
 그래도 처음에 하려고 했던 `standardAppearance`에만 그림자가 있도록은 만들 수 있다.
 
-![standard_template_scroll_clear.png](/asset/iOS/standard_template_scroll_clear.png)
+![standard_template_scroll_clear.png](/assets/iOS/standard_template_scroll_clear.png)
 
 - scrollEdgeAppearance.shadowColor = .clear
 - standardAppearance.shadowImage = template 이미지
 
-위 코드에서 그림자로 사용한 이미지들은 이 방법을 사용해서 코드로 간단하게 만들어볼 수 있다.
+위 코드에서 그림자로 사용한 이미지들은 [이 방법](/ios/2021/10/30/샘플-UIImage-만들기.html)을 사용해서 코드로 간단하게 만들어볼 수 있다.
