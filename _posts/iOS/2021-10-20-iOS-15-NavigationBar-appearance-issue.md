@@ -7,7 +7,7 @@ categories: iOS
 
 ## 문제
 
-Xcode 13으로 업데이트 한 후 스타벅스 프로젝트의 모든 `largeTitle` 화면에서 `navigationBar`의 그림자가 이상하게 동작하는 문제가 생겼다. 같은 Xcode 13으로 빌드하더라도 iOS 14 또는 더 낮은 버전에서 실행하면 기존과 같이 정상적으로 동작하지만 iOS 15 이상 디바이스에서 실행하면 그림자가 깨지는 문제가 발생했다.
+Xcode 13으로 업데이트 한 후 프로젝트의 모든 `largeTitle` 화면에서 `navigationBar`의 그림자가 이상하게 동작하는 문제가 생겼다. 같은 Xcode 13으로 빌드하더라도 iOS 14 또는 더 낮은 버전에서 실행하면 기존과 같이 정상적으로 동작하지만 iOS 15 이상 디바이스에서 실행하면 그림자가 깨지는 문제가 발생했다.
 
 |![when iOS 15.png](/assets/iOS/when_iOS_15.png) | ![when iOS 14.png](/assets/iOS/when_iOS_14.png)|
 |:---:|:---:|
