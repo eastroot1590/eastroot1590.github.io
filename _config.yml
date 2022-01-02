@@ -4,11 +4,11 @@ email: eastroot1590@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   개발 공부를 하면서 배우고 익힌 내용을 기록하여 공유한다.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://eastroot1590.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: https://eastroot1590.github.io # the base hostname & protocol for your site, e.g. http://example.com
 
 author:
   name: 이동근
-  email: "eastroot1590@gmail.com"
+  email: eastroot1590@gmail.com
   
 # minima
 minima:
