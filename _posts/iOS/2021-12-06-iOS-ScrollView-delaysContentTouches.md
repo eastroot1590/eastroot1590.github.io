@@ -24,9 +24,10 @@ func collectinoView(_ collectionView: UICollectionView, didUnhighlightItemAt ind
 
 ### delaysContentTouches = false
 
-![delay_off](/assets/iOS/scrollview_delay_off.mp4){:.aligncenter height="300"}
+https://user-images.githubusercontent.com/71330311/152641824-cfe37a8a-3d49-4cfb-aca9-619e32bae119.mp4
 
 ### delayesContentTouches = true
-![delay_on](/assets/iOS/scrollview_delay_on.mp4){:.aligncenter height="300"}
+
+https://user-images.githubusercontent.com/71330311/152641795-cd85c705-d5ae-43dd-a2f6-7902199cfafc.mp4
 
 이게 그냥 그자리에서 터치만 하는 경우에는 그렇게 큰 차이가 보이지 않지만 스크롤 입력, iOS에서 **pan**이라고 부르는 입력을 할 때 차이점이 도드라진다. 옵션을 껐을 때는 스크롤입력을 해도 cell이 줄어들었다가 커지는 애니메이션이 재생되지만 옵션이 켜져있으면 아예 애니메이션이 재생되지 않는것 처럼 보인다.
